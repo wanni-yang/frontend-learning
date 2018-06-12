@@ -1,6 +1,6 @@
 # - 阶段性总结，查漏补缺
 ## 目录
-- [js/css/html](#1-js-css-html)
+- [js css html](#1-js-css-html)
   - [js](#11-javascript)
   - [css](#12-css)
   - [html](#13-html)
@@ -25,6 +25,17 @@
  - 闭包
  - new操作符
  - 函数防抖/节流
+   - 节流 throttle
+<p align="center">
+  <img src="./img/throttle.webp" alt="Regular expression">
+</p>
+   - 防抖 debounce
+<p align="center">
+  <img src="./img/debounce.webp" alt="Regular expression">
+</p>
+ - 参数验证
+ - 函数柯里化
+
  - bind函数原理
 ## 1.2 css
  - 盒模型
@@ -57,6 +68,7 @@
  - 跨域
  - 重排/重绘
  - 检测浏览器版本
+ - 错误类型
 ## 5. JSON
 ## 6. AJAX
  - 创建ajax
@@ -73,3 +85,8 @@
  - MVVM
 ## 10. HTTP/HTTPS
  - 状态码
+## 11. web安全
+ - XSS
+ - SQL注入
+ - CSRF
+ - 
