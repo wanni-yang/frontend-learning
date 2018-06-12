@@ -1,9 +1,9 @@
 # - 阶段性总结，查漏补缺
 ## 目录
 - [js/css/html](#1-js-css-html)
- - [js](#11-javascript)
- - [css](#12-css)
- - [html](#13-html)
+  - [js](#11-javascript)
+  - [css](#12-css)
+  - [html](#13-html)
 - [浏览器](#2-浏览器)
 ## 1.js css html
 ## 1.1 javascript
