@@ -34,7 +34,7 @@
     第一次调用，设定定时器，再指定时间间隔之后执行
     第二次调用，先清除之前的定时器，重新设置一个定时器，
     underscore.js节流源码
-    ```
+    <pre>
     /**
      * 返回一个节流函数，该函数的执行频率会被严格限制，
      * @param func
@@ -98,13 +98,13 @@
         };
         return throttled;
     }; 
-    ``` 
+    </pre>
    - 防抖 debounce
     <p align="center">
       <img src="./img/debounce.webp" alt="防抖">
     </p>
     underscore.js节流源码
-    ```
+    <pre>
     /**
      * throttle函数的防反跳版本
      * 从下面的debounce实现我们可以看到，
@@ -150,7 +150,7 @@
         };
         return debounced;
     };
-    ```
+</pre>
  - 参数验证
  - 函数柯里化
 
