@@ -1,6 +1,12 @@
 # - 阶段性总结，查漏补缺
-##目录
-## 1. javascript
+## 目录
+- [js/css/html](#1-js-css-html)
+ - [js](#11-javascript)
+ - [css](#12-css)
+ - [html](#13-html)
+- [浏览器](#2-浏览器)
+##1.js css html
+## 1.1 javascript
  - 基本数据类型
  - 内置对象
  - 基本代码规范
@@ -20,7 +26,7 @@
  - new操作符
  - 函数防抖/节流
  - bind函数原理
-## 2. css
+## 1.2 css
  - 盒模型
  - 水平居中/垂直居中
  - 选择器/属性继承
@@ -35,7 +41,7 @@
  - hack写法
  - 初始化css样式
  - 伪类/伪元素
-## 3. html
+## 1.3 html
  - 语义化标签
  - canvas
  - video/audio
@@ -43,7 +49,7 @@
  - webWorker/webSocket/Geolocation
  - iframe
  - 兼容性
-## 4. 浏览器
+## 2. 浏览器
  - 描述一个网页从请求到显示的完整过程
  - 浏览器内核
  - 浏览器内多个标签页之间的通信
@@ -65,5 +71,5 @@
 ## 9. 框架
  - MVC
  - MVVM
-##1 0. HTTP/HTTPS
+## 10. HTTP/HTTPS
  - 状态码
