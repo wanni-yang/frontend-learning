@@ -99,14 +99,15 @@
         return throttled;
     }; 
     </pre>
+    
    - 防抖 debounce
     <p align="center">
       <img src="./img/debounce.webp" alt="防抖">
     </p>
-    underscore.js节流源码
+    underscore.js防抖源码
     <pre>
     /**
-     * throttle函数的防反跳版本
+     * throttle函数的防抖版本
      * 从下面的debounce实现我们可以看到，
      * 不同于throttle，debounce不再计算remain时间，
      * 其提供的__immediate__参数类似于throttle中的对于leading-edge和trailing-edge的控制：
@@ -150,10 +151,10 @@
         };
         return debounced;
     };
-</pre>
+    </pre>
+
  - 参数验证
  - 函数柯里化
-
  - bind函数原理
 ## 1.2 css
  - 盒模型
