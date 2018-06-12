@@ -5,7 +5,7 @@
  - [css](#12-css)
  - [html](#13-html)
 - [浏览器](#2-浏览器)
-##1.js css html
+## 1.js css html
 ## 1.1 javascript
  - 基本数据类型
  - 内置对象
