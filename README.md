@@ -66,6 +66,9 @@
     <p align="center">
       <img src="./img/event-loop.png" alt="">
     </p>
+    <pre>
+        栈（stack） : 函数调用会形成了一个堆栈帧堆（heap） : 对象被分配在一个堆中，一个用以表示一个内存中大的未被组织的区域。队列（queue） ： 一个 JavaScript 运行时包含了一个待处理的消息队列。每一个消息都与一个函数相关联。当栈为空时，则从队列中取出一个消息进行处理。这个处理过程包含了调用与这个消息相关联的函数（以及因而创建了一个初始堆栈帧）。当栈再次为空的时候，也就意味着该消息处理结束。
+    </pre>
  - 闭包
  - new操作符
     new constructor[([arguments])]
@@ -303,6 +306,7 @@
  - ES6 class
  - 同步/异步
 ## 8. 模块规范
+ [模块化](http://huangxuan.me/js-module-7day/#/)
  - CommonJS
  - AMD
  - CMD
