@@ -220,7 +220,7 @@
  - css3新特性
  - 兼容性
  - BFC(Block Formatting Context)规范
-    ###### 块格式上下文是页面CSS视觉渲染的一部分，用于决定块盒子的布局及浮动相互影响范围的一个区域
+    ###### 块格式上下文是页面CSS视觉渲染的一部分，用于决定块盒子的布局及浮动相互影响范围的一个区域。一个BFC包含创建该上下文元素的所有子元素，但不包括创建了新BFC的子元素的内部元素，即一个元素不能同时存在两个BFC中。
     ###### 视觉格式化模型(visual formatting model)是用来处理文档并将它显示在视觉媒体上的机制，它也是CSS中的一个概念。视觉格式化模型定义了盒（Box）的生成，盒主要包括了块盒、行内盒、匿名盒（没有名字不能被选择器选中的盒）以及一些实验性的盒（未来可能添加到规范中）。盒的类型由display属性决定。
    - block box
     `display:block`,参与BFC,垂直排列,block-level,
@@ -246,10 +246,22 @@
      - 根元素或者包含它的元素
      - `float 不为 none`的元素
      - `position:absolute/fixed`
-     - `display:inline-block`
+     - 非块级box容器`display:table-cell，table-caption，inline-block, flex, inline-flex`
      - 表格单元格
      - `overflow不是visible`
      - flex boxes `display:flex;inline-flex`
+   ######BFC特性。
+   - 同一个BFC中的元素相互影响可能发生margin collapse
+    <pre>可以通过创建新的BFC来解决margin叠加</pre>
+   - 同一个BFC中每个盒子的margin-left的左边与容器块border-left的左边相接触（从左到右）浮动存在也如此
+   - BFC区域不会和float box叠加
+    <pre>和float box同级创建一个BFC就可以进行两栏布局</pre>
+    [布局](http://jsrun.net/kqgKp/edit)
+   - BFC在页面上是独立的容器，处于BFC内部的元素与外部的元素相互隔离，
+   使内外元素的定位不会相互影响
+   - 计算BFC高度时，考虑其包含的全部元素包括浮动元素
+   <pre>float box的父容器创建BFC避免塌陷</pre>
+    [float box 父容器高度](http://jsrun.net/pqgKp/edit)
  - css阻塞
  - hack写法
  - 初始化css样式
