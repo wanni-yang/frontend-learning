@@ -56,12 +56,16 @@
       <img src="./img/prototype-chain.png" alt="原型链">
     </p>
  - 值的类型/内存图
+    
  - 继承
  - 创建对象方式
  - null/undefined
  - 通用的事件监听函数
  - parseInt
  - 事件
+    <p align="center">
+      <img src="./img/event-loop.png" alt="">
+    </p>
  - 闭包
  - new操作符
     new constructor[([arguments])]
