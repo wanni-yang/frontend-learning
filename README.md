@@ -8,7 +8,6 @@
 ## 1.js css html
 ## 1.1 javascript
  - 基本数据类型
-<<<<<<< HEAD
     - undefiend
     - null
     - boolean
@@ -16,19 +15,16 @@
     - string
     - object
     - symbol
-=======
- undefiend
->>>>>>> 5655f4be99174606d10db8ecdb877aa0c9338a18
  - 内置对象
  - 基本代码规范
  - call/apply/bind
-   ## call()
+   #### call()
     - call() 方法调用一个函数,其具有一个指定的this值和分别地提供的参数(参数的列表)。
     - 语法fun.call(thisArg, arg1, arg2, ...)
       thisArg
     在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象。
     - 返回值：你调用的方法的返回值，若该方法没有返回值，则返回undefined。
-   ## apply()
+   #### apply()
     - apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数。
     - func.apply(thisArg, [argsArray])
     - 返回值：调用有指定this值和参数的函数的结果。
@@ -46,7 +42,7 @@
  - Array操作
  - 字符串操作
  - this工作原理
-   <b>this指向最后调用它的那个对象，没有调用的对象就是全局对象，浏览器中是window</b>
+   #### <b>this指向最后调用它的那个对象，没有调用的对象就是全局对象，浏览器中是window</b>
    改变this指向的方法：
    - 使用箭头函数
      箭头函数的this始终指向函数定义时的this,而不是执行时。箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的this，否则，this 为 undefined
