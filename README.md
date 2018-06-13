@@ -252,16 +252,17 @@
      - flex boxes `display:flex;inline-flex`
    ######BFC特性。
    - 同一个BFC中的元素相互影响可能发生margin collapse
-    <pre>可以通过创建新的BFC来解决margin叠加</pre>
+    <pre>可以通过创建新的BFC来解决margin叠加[margin collapse](http://jsrun.net/YqgKp/edit)
+    </pre>
    - 同一个BFC中每个盒子的margin-left的左边与容器块border-left的左边相接触（从左到右）浮动存在也如此
    - BFC区域不会和float box叠加
-    <pre>和float box同级创建一个BFC就可以进行两栏布局</pre>
-    [布局](http://jsrun.net/kqgKp/edit)
+    <pre>和float box同级创建一个BFC就可以进行两栏布局
+    [布局](http://jsrun.net/kqgKp/edit)</pre>
    - BFC在页面上是独立的容器，处于BFC内部的元素与外部的元素相互隔离，
    使内外元素的定位不会相互影响
    - 计算BFC高度时，考虑其包含的全部元素包括浮动元素
-   <pre>float box的父容器创建BFC避免塌陷</pre>
-    [float box 父容器高度](http://jsrun.net/pqgKp/edit)
+   <pre>float box的父容器创建BFC避免塌陷[float box 父容器高度](http://jsrun.net/pqgKp/edit)</pre>
+    
  - css阻塞
  - hack写法
  - 初始化css样式
