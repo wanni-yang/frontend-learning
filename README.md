@@ -8,6 +8,7 @@
 ## 1.js css html
 ## 1.1 javascript
  - 基本数据类型
+<<<<<<< HEAD
     - undefiend
     - null
     - boolean
@@ -15,6 +16,9 @@
     - string
     - object
     - symbol
+=======
+ undefiend
+>>>>>>> 5655f4be99174606d10db8ecdb877aa0c9338a18
  - 内置对象
  - 基本代码规范
  - call/apply/bind
