@@ -52,6 +52,9 @@
    - 使用apply call bind
    - new实例化一个对象
  - 原型/原型链
+    <p align="center">
+      <img src="./img/prototype-chain.png" alt="原型链">
+    </p>
  - 值的类型/内存图
  - 继承
  - 创建对象方式
@@ -211,6 +214,8 @@
  - 函数柯里化
 ## 1.2 css
  - 盒模型
+ - 多列布局
+   [常见布局](https://www.sweet-kk.top/css-layout/#/)
  - 水平居中/垂直居中
  - 选择器/属性继承
  - 选择器优先级
@@ -250,7 +255,7 @@
      - 表格单元格
      - `overflow不是visible`
      - flex boxes `display:flex;inline-flex`
-   ###### BFC特性。
+   ###### BFC特性
    - 同一个BFC中的元素相互影响可能发生margin collapse
     <pre>可以通过创建新的BFC来解决margin叠加</pre>
     [margin collapse](http://jsrun.net/YqgKp/edit)
