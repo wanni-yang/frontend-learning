@@ -11,18 +11,18 @@
  - 内置对象
  - 基本代码规范
  - call/apply/bind
-   #### call()
+   ## call()
     - call() 方法调用一个函数,其具有一个指定的this值和分别地提供的参数(参数的列表)。
     - 语法fun.call(thisArg, arg1, arg2, ...)
       thisArg
     在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象。
     - 返回值：你调用的方法的返回值，若该方法没有返回值，则返回undefined。
-   #### apply()
+   ## apply()
     - apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数。
     - func.apply(thisArg, [argsArray])
     - 返回值：调用有指定this值和参数的函数的结果。
    call()方法的作用和 apply() 方法类似，只有一个区别，就是 call()方法接受的是若干个参数的列表，而apply()方法接受的是一个包含多个参数的数组
-   #### bind()
+   ## bind()
    bind() 函数会创建一个新函数（称为绑定函数），新函数与被调函数（绑定函数的目标函数）具有相同的函数体（在 ECMAScript 5 规范中内置的call属性）。当新函数被调用时 this 值绑定到 bind() 的第一个参数，该参数不能被重写。绑定函数被调用时，bind() 也接受预设的参数提供给原函数。一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数
    - fun.bind(thisArg[, arg1[, arg2[, ...]]])
     thisArg
@@ -53,7 +53,7 @@
  - 事件
  - 闭包
  - new操作符
-    #### new constructor[([arguments])]
+    new constructor[([arguments])]
     当代码 new Foo(...) 执行时，会发生以下事情：
     - 创建一个空对象 obj（一个继承自 constructor.prototype 的新对象）;
     - 将新创建的空对象的隐式原型指向其构造函数的显示原型。
@@ -66,9 +66,7 @@
        函数作为一个对象的方法被调用
     - 使用构造函数调用
         new操作符调用构造函数创建一个对象
-    - 作为Function方法调用函数(apply call)
-      call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身
-在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。
+    - 作为函数方法调用函数(apply call)
  - 函数防抖/节流
    - 节流 throttle
     <p align="center">
@@ -205,7 +203,7 @@
  - 函数柯里化
 ## 1.2 css
  - 盒模型
- - 布局(水平居中/垂直居中...)
+ - 水平居中/垂直居中
  - 选择器/属性继承
  - 选择器优先级
  - css3新增伪类
