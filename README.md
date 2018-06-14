@@ -425,7 +425,6 @@
       不同类型的任务会进入对应的Event Queue，比如setTimeout和setInterval会进入相同的Event Queue</br>
       执行顺序：整体代码---所有微任务Queue---第一轮循环结束---宏任务Queue---所有微任务Queue---...</br>
       node环境Node的Event Loop分阶段，阶段有先后，依次是
-
       - expired timers and intervals，即到期的setTimeout/setInterval
       - I/O events，包含文件，网络等等
       - immediates，通过setImmediate注册的函数
@@ -435,11 +434,11 @@
       - 再清空other queue，常见的如Promise
       而和规范的区别，在于node会清空当前所处阶段的队列，即执行所有task
       </pre>
+
       <p align="center">
           <img src="./img/loop-task.png" alt="">
       </p>
-
-        [代码](http://jsrun.net/zqgKp/edit)
+      [代码](http://jsrun.net/zqgKp/edit)
 
        异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
        - setTimeout
