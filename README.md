@@ -441,7 +441,7 @@
 
         [代码](http://jsrun.net/zqgKp/edit)
 
-       ###### 异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
+       异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
        - setTimeout
        调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
        - setInterval
