@@ -419,7 +419,8 @@
     <p align="center">
       <img src="./img/eventloops.png" alt="">
     </p>
-      <pre>
+
+    <pre>
       macro-task(宏任务)：包括整体代码script setTimeout setInterval I/O UI交互事件；</br>
       micro-task(微任务)：Promise process.nextTick MutaionObserver</br>
       不同类型的任务会进入对应的Event Queue，比如setTimeout和setInterval会进入相同的Event Queue</br>
@@ -433,17 +434,17 @@
       - 优先清空next tick queue，即通过process.nextTick注册的函数
       - 再清空other queue，常见的如Promise
       而和规范的区别，在于node会清空当前所处阶段的队列，即执行所有task
-      </pre>
+    </pre>
 
-      <p align="center">
-          <img src="./img/loop-task.png" alt="">
-      </p>
-      [代码](http://jsrun.net/zqgKp/edit)
+    <p align="center">
+        <img src="./img/loop-task.png" alt="">
+    </p>
+    [代码](http://jsrun.net/zqgKp/edit)
 
-       异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
-       - setTimeout
-       调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
-       - setInterval
-       每隔指定的时间将任务添加到队列中，至于什么时候执行取决于队列中之前的任务是否处理完成
-       - Promise与process.nextTick(callback)
-       - setImmediate
+    异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
+    - setTimeout
+    调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
+    - setInterval
+    每隔指定的时间将任务添加到队列中，至于什么时候执行取决于队列中之前的任务是否处理完成
+    - Promise与process.nextTick(callback)
+    - setImmediate
