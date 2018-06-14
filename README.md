@@ -80,18 +80,18 @@
       macro-task(宏任务)：包括整体代码script，setTimeout，setInterval；</br>
       micro-task(微任务)：Promise，process.nextTick</br>
       不同类型的任务会进入对应的Event Queue，比如setTimeout和setInterval会进入相同的Event Queue</br>
-        执行顺序：整体代码---所有微任务Queue---第一轮循环结束---宏任务Queue---所有微任务Queue---...
+      执行顺序：整体代码---所有微任务Queue---第一轮循环结束---宏任务Queue---所有微任务Queue---...
       </pre>
       <p align="center">
       <img src="./img/loop-task.png" alt="">
     </p>
     
-       - setTimeout
-       调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
-       - setInterval
-       每隔指定的时间将任务添加到队列中，至于什么时候执行取决于队列中之前的任务是否处理完成
-       - Promise与process.nextTick(callback)
-       - setImmediate
+   - setTimeout
+   调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
+   - setInterval
+   每隔指定的时间将任务添加到队列中，至于什么时候执行取决于队列中之前的任务是否处理完成
+   - Promise与process.nextTick(callback)
+   - setImmediate
  - 闭包
  - new操作符
     new constructor[([arguments])]
