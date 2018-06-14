@@ -393,27 +393,28 @@
    #### 缓存是用来缓解服务器端压力、提升性能、减少带宽消耗，请求资源的副本存储下来的技术。
    - 缓存截止到下一次发生改变
    - 私有缓存 共享缓存
-   <pre>Cache-Control: private
-Cache-Control: public</pre>
+   <pre>Cache-Control: private Cache-Control: public</pre>
+
    - 浏览器缓存
    ###### 浏览器对于缓存的处理是根据第一次请求资源时返回的响应头来确定的
    - 代理缓存---共享
    - 网关、CDN、反向代理缓存和负载均衡
-   #### 缓存控制
+   ###### 缓存控制
+
     <p align="center">
       <img src="./img/cache.svg" alt="cache">
     </p>
    
-   <pre> - cache-control
-            Cache-Control: must-revalidate缓存验证，用户点击刷新就开始缓存验证，缓存的响应头里面有该字段
-            Cache-Control: max-age=31536000 缓存过期的相对时间
-            Cache-Control: no-store
-            Cache-Control: no-cache, no-store, must-revalidate
-         - pragma
-            只支持请求头，响应头中没有。同Cache-Control: no-cache
-         - Expires 缓存过期的绝对时间
-         - Date
-         
+   <pre> 
+     - cache-control
+        Cache-Control: must-revalidate缓存验证，用户点击刷新就开始缓存验证，缓存的响应头里面有该字段
+        Cache-Control: max-age=31536000 缓存过期的相对时间
+        Cache-Control: no-store
+        Cache-Control: no-cache, no-store, must-revalidate
+     - pragma
+        只支持请求头，响应头中没有。同Cache-Control: no-cache
+     - Expires 缓存过期的绝对时间
+     - Date
    </pre>
    <pre>
     请求头附加该头部发给服务端检查缓存是否过期。过期但可用：返回304无实体响应；过期不可用：检测到不新鲜返回请求实体
