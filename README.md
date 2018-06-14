@@ -404,8 +404,8 @@
     <p align="center">
       <img src="./img/cache.svg" alt="cache">
     </p>
-   
    <pre> 
+
      - cache-control 通用头
         请求指令
         Cache-Control: must-revalidate缓存验证，用户点击刷新就开始缓存验证，缓存的响应头里面有该字段
@@ -431,10 +431,9 @@
      - pragma 通用头 同Cache-Control: no-cache 强制验证缓存 1.0版本字段 Pragma的优先级高于Cache-Control和Expires
      - Age 响应头 资源在缓存代理中的时间取决于max-age 用来区分请求的资源来自源服务器还是缓存服务器的缓存的
      - Vary 响应头 缓存服务器会以User-Agent和 Accept-Encoding两个请求首部字段来区分缓存版本。根据请求头里的这两个字段来决定返回给客户端什么内容 
-    请求头附加该头部发给服务端检查缓存是否过期。过期但可用：返回304无实体响应；过期不可用：返回请求实体
-     ###### 校验字段
+    
+     ###### 校验字段，请求头附加该头部发给服务端检查缓存是否过期。过期但可用：返回304无实体响应；过期不可用：返回请求实体
      - Etag 响应头, 服务器生成资源的唯一标识， 缓存的强校验器，对代理不透明 。之后客户端请求头If-None-Match 可验证缓存
-
      - Last-Modified 实体头,最后一次修改时间 
      弱校验器（精确到1s）之后客户端请求头 If-Modified-Since 验证本地缓存是否可用
      - Expires 实体头 缓存过期的绝对时间
