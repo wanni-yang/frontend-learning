@@ -24,7 +24,7 @@
     - call() 方法调用一个函数,其具有一个指定的this值和分别地提供的参数(参数的列表)。
     - 语法fun.call(thisArg, arg1, arg2, ...)
       thisArg
-    在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象。
+    在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，<b>如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，</b>同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的自动包装对象。
     - 返回值：你调用的方法的返回值，若该方法没有返回值，则返回undefined。
    #### apply()
     - apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数。
@@ -389,6 +389,37 @@
  - MVVM
 ## 10. HTTP/HTTPS
  - 状态码
+ - 缓存
+   #### 缓存是用来缓解服务器端压力、提升性能、减少带宽消耗，请求资源的副本存储下来的技术。
+   - 缓存截止到下一次发生改变
+   - 私有缓存 共享缓存
+   <pre>Cache-Control: private
+Cache-Control: public</pre>
+   - 浏览器缓存
+   ###### 浏览器对于缓存的处理是根据第一次请求资源时返回的响应头来确定的
+   - 代理缓存---共享
+   - 网关、CDN、反向代理缓存和负载均衡
+   #### 缓存控制
+    <p align="center">
+      <img src="./img/cache.svg" alt="cache">
+    </p>
+   
+   <pre> - cache-control
+            Cache-Control: must-revalidate缓存验证，用户点击刷新就开始缓存验证，缓存的响应头里面有该字段
+            Cache-Control: max-age=31536000 缓存过期的相对时间
+            Cache-Control: no-store
+            Cache-Control: no-cache, no-store, must-revalidate
+         - pragma
+            只支持请求头，响应头中没有。同Cache-Control: no-cache
+         - Expires 缓存过期的绝对时间
+         - Date
+         
+   </pre>
+   <pre>
+    请求头附加该头部发给服务端检查缓存是否过期。过期但可用：返回304无实体响应；过期不可用：检测到不新鲜返回请求实体
+       - Etag 响应头，缓存的强校验器，对代理不透明 之后客户端请求头If-None-Match 可验证缓存
+       - Last-Modified 响应头 弱校验器（精确到1s）之后客户端请求头 If-Modified-Since 可验证缓存
+   </pre>
 ## 11. web安全
  - XSS
  - SQL注入
