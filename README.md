@@ -41,6 +41,44 @@
      - 创建绑定函数：bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。
      - 偏函数：bind()的另一个最简单的用法是使一个函数拥有预设的初始参数。这些参数（如果有的话）作为bind()的第二个参数跟在this（或其他对象）后面，之后它们会被插入到目标函数的参数列表的开始位置，传递给绑定函数的参数会跟在它们的后面。
      - 配合setTimeout:在默认情况下，使用 window.setTimeout() 时，this 关键字会指向 window （或全局）对象。当使用类的方法时，需要 this 引用类的实例，你可能需要显式地把 this 绑定到回调函数以便继续使用实例。
+   <pre>
+    underscore.js
+       _.bind = function (func, context) {
+            if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
+            if (!_.isFunction(func)) throw new TypeError('Bind must be called on a function');
+            var args = slice.call(arguments, 2);
+            var bound = function () {
+                return executeBound(func, bound, context, this, args.concat(slice.call(arguments)));
+            };
+            return bound;
+        };
+    _.bindAll(obj)：绑定对象 obj 的所有指定成员方法中的执行上下文到 obj
+    _.bindAll = function (obj) {
+        var i, length = arguments.length,
+            key;
+        if (length <= 1) throw new Error('bindAll must be passed function names');
+        for (i = 1; i < length; i++) {
+            key = arguments[i];
+            obj[key] = _.bind(obj[key], obj);
+        }
+        return obj;
+    };
+    e.g.
+    var button = {
+        title: 'button#1',
+        onClick: function() {
+            console.log(this.title + ' has been clicked!');
+        },
+        onHover: function() {
+            console.log(this.title + ' hovering!');
+        }
+    }
+    _.bindAll(button, 'onClick', 'onHover');
+    setTimeout(button.onClick, 0);
+    setTimeout(button.onHover, 0);
+    // => "button#1 has been clicked!"
+    // => "button#1 hovering!"
+   </pre>
  
  - this工作原理
    #### <b>this指向最后调用它的那个对象，没有调用的对象就是全局对象，浏览器中是window</b>
@@ -97,8 +135,8 @@
     </p>
 
     [代码](http://jsrun.net/zqgKp/edit)
-    
-   ###### 异步函数A(args..., callbackFn) A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数，queue 处理结果
+
+   ###### 异步函数A(args..., callbackFn)</br> A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数 处理结果
    - setTimeout
    调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
    - setInterval
