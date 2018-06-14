@@ -64,7 +64,7 @@
  - parseInt
  - 事件
     
-    ##### Event-loop是js的执行机制（不同环境执行方式有所不同：node,浏览器） JavaScript 的一个非常有趣的特性是事件循环模型，与许多其他语言不同，它永不阻塞（例外：如 alert或者同步 XHR）,用来实现异步。处理 I/O 通常通过事件和回调来执行，所以当一个应用正等待IndexedDB查询返回或者一个XHR请求返回时，它仍然可以处理其它事情，如用户输入。
+    ##### Event-loop是js的runtime执行机制（不同环境执行方式有所不同：node,浏览器） JavaScript 的一个非常有趣的特性是事件循环模型，与许多其他语言不同，它永不阻塞（例外：如 alert或者同步 XHR）,用来实现异步。处理 I/O 通常通过事件和回调来执行，所以当一个应用正等待IndexedDB查询返回或者一个XHR请求返回时，它仍然可以处理其它事情，如用户输入。
     <p align="center">
       <img src="./img/eventloop.png" alt="">
     </p>
@@ -96,6 +96,7 @@
       <img src="./img/loop-task.png" alt="">
     </p>
     [代码](http://jsrun.net/zqgKp/edit)
+   ###### 异步函数A(args..., callbackFn) A：发起函数(注册函数)发起异步过程</br> callbackFn：回调函数，queue 处理结果
    - setTimeout
    调用 setTimeout 函数在指定时间之后在队列中添加一个消息/回调函数/任务。这个时间段作为函数的第二个参数被传入。如果队列中没有其它消息，消息会被马上处理。但是，如果有其它消息，setTimeout消息必须等待其它消息处理完。因此第二个参数仅仅表示最少的时间 而非确切的时间
    - setInterval
