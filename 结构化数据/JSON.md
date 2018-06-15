@@ -1,0 +1,6 @@
+ - json.parse()
+    - 不允许逗号结尾
+    - JSON.parse(text[, reviver])
+    - reviver函数的遍历顺序依照：从最内层开始，按照层级顺序，依次向外遍历
+ - json.stringfy()
+   - JSON.stringify(value[, replacer [, space]])

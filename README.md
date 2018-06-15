@@ -15,7 +15,8 @@
  - webSocket如何兼容低浏览器
  - 跨域
  - 重排/重绘
-## 5. JSON
+## 5. 结构化数据
+ - JSON
 ## 6. AJAX
  - 创建ajax
  - callback类型
