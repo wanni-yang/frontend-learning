@@ -3,8 +3,12 @@
 > 所有非箭头函数中都可用的局部变量，可以通过arguments[下标]去访问函数参数，是一个类数组对象，只有length属性和索引元素
 
 <pre>
-Array.prototype.slice.call(arguments) or [].slice.call(arguments) or Array.from(arguments) or [...arguments]将arguments对象转为真正的数组
-<b>性能好一些的</b>可以通过遍历arguments对象来构造一个新的数组，arguments.length === 1 ? [arguments[0]] : Array.call(null,arguments)
+Array.prototype.slice.call(arguments) or
+[].slice.call(arguments) or
+Array.from(arguments) or
+[...arguments]将arguments对象转为真正的数组
+<b>性能好一些的</b>可以通过遍历arguments对象来构造一个新的数组
+arguments.length === 1 ? [arguments[0]] : Array.call(null,arguments)
 </pre>
 
 ### 属性
