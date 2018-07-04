@@ -35,14 +35,14 @@
 |对象名|说明
 |-|-
 |Object|Object构造函数为给定值创建一个对象包装器
-|Function|创建一个新的Function对象
+|Function|创建一个新的Function对象[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/%E5%87%BD%E6%95%B0/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95.md)
 |Boolean|是一个布尔值的对象包装器,参数值为 0、-0、null、false、NaN、undefined、 document.all或者空字符串（""），则生成的 Boolean 对象的值为 false。当 Boolean 对象用于条件语句的时候（译注：意为直接应用于条件语句），任何不是 undefined 和 null 的对象，包括值为 false 的 Boolean 对象，都会被当做 true 来对待。
 |Symbol|是一种基本数据类型
 |Error|
 |Number|Number 对象由 Number() 构造器创建
 |Date|
 |Math|具有数学常数和函数的属性和方法。不是一个函数对象。
-|String|String 全局对象是一个用于字符串或一个字符序列的构造函数
+|String|String 全局对象是一个用于字符串或一个字符序列的构造函数[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/%E5%AD%97%E7%AC%A6%E4%B8%B2.md)
 |RegExp|RegExp 构造函数创建了一个正则表达式对象，用于将文本与一个模式匹配
 
 ### 可索引的集合对象 
@@ -51,13 +51,13 @@
 
 |对象名|说明
 |-|-
-|Array|用于构造数组的全局对象
+|Array|用于构造数组的全局对象[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/%E6%95%B0%E7%BB%84/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95.md)
 
 ### 使用键的集合对象
 
 |对象名|说明
 |-|-
-|Map|Map 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。
+|Map|Map 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。[detali](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/map.md)
 |Set|允许存储任何类型的唯一值，无论是原始值或者是对象引用
 |WeekMap|WeakMap 的 key 只能是 Object 类型。 原始数据类型 是不能作为 key 的
 |WeekSet|WeakSet 对象是一些对象值的集合, 并且其中的每个对象值都只能出现一次.
@@ -89,6 +89,6 @@
 
 |对象名|说明
 |-|-
-|arguments|
+|arguments|[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/%E5%87%BD%E6%95%B0/arguments%E5%AF%B9%E8%B1%A1.md)
 
 
