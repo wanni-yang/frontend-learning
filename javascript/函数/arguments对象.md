@@ -48,7 +48,6 @@ arguments.length === 1 ? [arguments[0]] : Array.call(null,arguments)
       var args = [].slice.call(arguments,1);
       listhtml += args.join('<li></li>');
       listhtml += "</li></"+ type+"l>";
-
       return listhtml;
    }
    var listHTML = list("u", "One", "Two", "Three");
