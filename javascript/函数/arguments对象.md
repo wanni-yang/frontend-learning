@@ -38,20 +38,21 @@ arguments.length === 1 ? [arguments[0]] : Array.call(null,arguments)
  </pre>
 
 - 定义创建HTML列表
+
   <pre>
- /**
- 参数：只是声明了列表类型
- /
- function list(type){
-    var listhtml = "<" +type+"l><li";
-    var args = [].slice.call(arguments,1);
-    listhtml += args.join('<li></li>');
-    listhtml += "</li></"+ type+"l>";
-    
-    return listhtml;
- }
- var listHTML = list("u", "One", "Two", "Three");
- </pre>
+   /**
+   参数：只是声明了列表类型
+   /
+   function list(type){
+      var listhtml = "<" +type+"l><li";
+      var args = [].slice.call(arguments,1);
+      listhtml += args.join('<li></li>');
+      listhtml += "</li></"+ type+"l>";
+
+      return listhtml;
+   }
+   var listHTML = list("u", "One", "Two", "Three");
+  </pre>
  
  - 与剩余参数、默认参数和解构赋值参数结合使用
  
