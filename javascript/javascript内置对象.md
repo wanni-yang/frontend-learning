@@ -34,7 +34,7 @@
 
 |对象名|说明
 |-|-
-|Object|Object构造函数为给定值创建一个对象包装器
+|Object|Object构造函数为给定值创建一个对象包装器[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/Object.md)
 |Function|创建一个新的Function对象[detail](https://github.com/wanni-yang/frontend-learning/blob/master/javascript/%E5%87%BD%E6%95%B0/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95.md)
 |Boolean|是一个布尔值的对象包装器,参数值为 0、-0、null、false、NaN、undefined、 document.all或者空字符串（""），则生成的 Boolean 对象的值为 false。当 Boolean 对象用于条件语句的时候（译注：意为直接应用于条件语句），任何不是 undefined 和 null 的对象，包括值为 false 的 Boolean 对象，都会被当做 true 来对待。
 |Symbol|是一种基本数据类型
