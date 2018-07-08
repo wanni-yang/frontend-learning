@@ -32,7 +32,7 @@
  |repeat|count|包含指定字符串的指定数量副本的新字符串|返回指定重复次数的由元素组成的字符串对象
  |slice|beginSlice,endSlice|新字符串|截取字符串区域,不会改变原字符串
  |split|separator，limit|数组|分割字符串为数组
- |substr|indexStart,length|从指定位置开始到指定字符数的字符 or 空字符|指定位置开始的字符
+ |*substr*|indexStart,length|从指定位置开始到指定字符数的字符 or 空字符|指定位置开始的字符
  |substring|[indexStart, indexEnd)|新字符串|指定两个下标之间的字符
  |toLocalLowerCase|-|小写字符串|转换小写
  |toLowerCase|-|小写字符串|转换小写
@@ -41,3 +41,21 @@
  |toString|-|指定对象的字符串形式|String 对象覆盖了Object 对象的 toString 方法；并没有继承 Object.toString()。对于 String 对象，toString 方法返回该对象的字符串形式
  |trim|-|新字符串|去除首尾空格
  |valueOf|-|一个String对象的原始值等同于String.prototype.toString()|该方法通常在 JavaScript 内部被调用，而不是在代码里显示调用
+
+### 原型方法之间
+
+- substring([indexStart,indexEnd))
+
+  substring 要截取的是从 indexA 到 indexB（不包含）之间的字符，符合以下规律：
+  若 indexA == indexB，则返回一个空字符串；
+  若 省略 indexB，则提取字符一直到字符串末尾；
+  若 任一参数小于 0 或 NaN，则被当作 0；
+  若 任一参数大于 length，则被当作 length。
+  而 如果 indexA > indexB，则 substring 的执行效果就像是两个参数调换一般。
+  
+  > substr 和 substring，都是两个参数，作用基本相同，两者第一个参数含义相同，但用法不同，前者可为负数，后者值为负数或者非整数时将隐式转换为0。前者第二个参数表示截取字符串的长度，后者第二个参数表示截取字符串的下标；同时substring第一个参数大于第二个参数时，执行结果同位置调换后的结果
+  
+  
+
+  
+
