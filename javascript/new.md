@@ -1,10 +1,36 @@
 new constructor[([arguments])]
 当代码 new Foo(...) 执行时，会发生以下事情：
-- 创建一个空对象 obj（一个继承自 constructor.prototype 的新对象）;
+<pre>
+    var obj = {}
+    obj.__proto__ = F.prototype
+    F.call(obj)
+</pre>
+- 创建一个空对象 obj（一个继承自 constructor.prototype 的新对象）;this指向该对象
 - 将新创建的空对象的隐式原型指向其构造函数的显示原型。
-- 使用 call 改变 this的指向
+- 使用 call 改变 this的指向，将F对象的this替换为obj调用F
 - 如果无返回值或者返回一个非对象值，则将 obj返回作为新对象；如果返回值是一个新对象的话那么直接直接返回该对象
-- 函数调用
+
+<pre>
+function MyObject(age) {
+    this.age = age;
+}
+
+MyObject.construct = function() {
+    var o = {}, Constructor = MyObject;
+    o.__proto__ = Constructor.prototype;
+    // FF 支持用户引用内部属性 [[Prototype]]
+
+    Constructor.apply(o, arguments);
+    return o;
+};
+
+var obj1 = new MyObject(10);
+var obj2 = MyObject.construct(10);
+alert(obj2 instanceof MyObject);
+// true
+</pre>
+
+### 函数调用
 - 作为函数调用
     一个最简单的全局函数，不属于任何一个对象，就是一个函数，这样的情况浏览器中的非严格模式默认是属于全局对象window的，在严格模式，就是 undefined。 
 - 作为方法调用
