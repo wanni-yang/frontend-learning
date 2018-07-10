@@ -17,6 +17,8 @@
 |status| UTF-16 的字符串|请求状态描述
 |upload|默认返回一个 XMLHttpRequestUpload 对象|可以在 upload 上添加一个事件监听来跟踪上传过程。其方法见 XMLHttpRequestEventTarget事件接口属性</br><pre>xhr.upload.onprogress = function(e){</br>var percent = 100 * e.loaded / e.total |0;</br> console.log('upload: ' + precent + '%');</br>}</pre>
 |withCredentials|bool|默认false表示跨域请求中不发送cookie等，true表示cookies , authorization headers 或者TLS客户端证书 都可以正常发送和接收
+|timeout|0不生效，可以转为数字的生效|用于指定ajax的超时时长. 通过它可以灵活地控制ajax请求时间的上限.
+
 ### XMLHttpRequest原型方法
 |方法名|参数|返回值|说明
 |-|-|-|-
@@ -32,13 +34,12 @@
 
 |属性名|说明
 |-|-
-|onloadstart|
-|onprocess|
-|onload|
-|onloadend|
-|ontimeout|
+|onloadstart|事件回调方法触发在ajax请求发送之前， 触发时机在 readyState==1 --- readyState==2之间，默认将传入一个ProgressEvent事件进度对象，该对象有3个属性，lengthComputer长度是否可计算，loaded已加载资源大小，total资源，内容总大小
+|onprocess|事件回调方法在 readyState==3 状态时开始触发, 默认传入 ProgressEvent 对象, 可通过 e.loaded/e.total 来计算加载资源的进度, 该方法用于获取资源的下载进度
+|onload|事件回调方法在ajax请求成功后触发, 触发时机在 readyState==4 状态之后
+|onloadend|事件回调方法在ajax请求完成后触发, 触发时机在 readyState==4 状态之后(收到响应时) 或者 readyState==2 状态之后(未收到响应时)默认将传入一个ProgressEvent事件进度对象
+|ontimeout|方法在ajax请求超时时触发, 通过它可以在ajax请求超时时做一些后续处理
 |onerror|ajax请求出错后执行. 通常只在网络出现问题时或者ERR_CONNECTION_RESET时触发
-|onabort|
 
 ### 发起ajax,浏览器各线程之间的情况
 <p align="center">
