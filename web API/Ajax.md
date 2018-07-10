@@ -8,7 +8,7 @@
 |属性名|类型|说明
 |-|-|-
 |onreadystatechange||onreadystatechange事件回调方法在readystate状态改变时触发, 在一个收到响应的ajax请求周期中, onreadystatechange 方法会被触发4次. 因此可以在 onreadystatechange 方法中绑定一些事件回调
-|readyState||0	xhr.UNSENT (未初始化)	  请求已建立，未初始化。open()方法还未被调用.</br>1	xhr.OPENED(未发送)  请求已建立，未发送。	open()方法已经被调用，未调用send方法.</br>2	xhr.HEADERS_RECEIVED (已获取响应头) 请求已发送 send()方法已经被调用, 响应头和响应状态已经返回. </br> 3	xhr.LOADING (正在下载响应体) 请求处理中， responseText中已经获取了部分数据.</br>4	xhr.DONE (请求完成)	整个请求过程已经完毕.此时可以通过通过responseBody和responseText获取完整的响应数据
+|readyState||0	xhr.UNSENT (未初始化)	  请求已建立，未初始化。open()方法还未被调用.</br>1	xhr.OPENED(未发送)  请求已建立，未发送。	open()方法已经被调用，未调用send方法.</br>2	xhr.HEADERS_RECEIVED (已获取响应头) 请求已发送。 send()方法已经被调用, 响应头和响应状态已经返回. </br> 3	xhr.LOADING (正在下载响应体) 请求处理中。 responseText中已经获取了部分数据.</br>4	xhr.DONE (请求完成)	整个请求过程已经完毕.此时可以通过responseBody和responseText获取完整的响应数据
 |response||响应内容
 |responseText||响应内容文本形式
 |responseType||响应类型 可取 "arraybuffer" , "blob" , "document" , "json" , and "text" 共五种类型
@@ -40,6 +40,26 @@
 |onloadend|事件回调方法在ajax请求完成后触发, 触发时机在 readyState==4 状态之后(收到响应时) 或者 readyState==2 状态之后(未收到响应时)默认将传入一个ProgressEvent事件进度对象
 |ontimeout|方法在ajax请求超时时触发, 通过它可以在ajax请求超时时做一些后续处理
 |onerror|ajax请求出错后执行. 通常只在网络出现问题时或者ERR_CONNECTION_RESET时触发
+
+### XHR level 1 & XHR level 2
+
+  level1
+- 仅支持文本数据传输，不支持二进制数据
+- 传输数据时，没有进度提示
+- 受浏览器同源策略限制，只能请求同域资源
+- 没有超时机制
+    
+  level 2
+- 支持二进制数据，可以上传文件，可以使用FormData对象管理表单
+- 可以通过xhr.upload.onprogress事件回调方法获取传输进度
+- 同源策略依旧生效，提供Access-Control-Allow-Origin等heades设置为* 表示允许任何域名请求从而实现跨域访问
+- 可以设置timeout ontimeout，可以控制超时时长和超时后处理
+
+### $.ajax
+
+$.ajax是对原生ajax的封装
+
+
 
 ### 发起ajax,浏览器各线程之间的情况
 <p align="center">
