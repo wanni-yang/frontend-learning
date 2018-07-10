@@ -57,9 +57,54 @@
 
 ### $.ajax
 
-$.ajax是对原生ajax的封装
+> $.ajax是对原生ajax的封装,消除了不同浏览器异步http的差异性。$.ajax()只有一个参数，该参数为key-value对象
 
+#### 详细参数列表如下
+The PlainObject type is a JavaScript object containing zero or more key-value pairs
 
+|key|value栗子|类型|说明
+|-|-|-|-
+|type|GET|String|method别名
+|url||String|发送请求地址
+|data| {foo:["bar1", "bar2"]} 转换为 '&foo=bar1&foo=bar2'|PlainObject or String or Array|发送到服务器端的数据以防止这种自动转换。对象必须为"{键:值}"格式。如果这个参数是一个数组，jQuery会按照traditional 参数的值， 将自动转化为一个同名的多值查询字符串
+|dataType|xml json script html jsonp text|String|从服务器返回期望的数据类型,jsonp以 JSONP 的方式载入 JSON 数据块。会自动在所请求的URL最后添加"?callback=?"。默认情况下会通过在URL中附加查询字符串变量 ，_=[TIMESTAMP]， 禁用缓存结果，除非设置了cache参数为true
+|dataFilter|function(data,type){}|Function|处理原始响应数据，参数中data是原始响应数据，type是dataType的值
+|method|GET POST PUT DELETE|String|请求的方法
+|mineType||String|
+|accepts||PlainObject|用于通知服务器该请求需要接收何种类型的返回结果. 如有必要, 推荐在 $.ajaxSetup() 方法中设置一次.
+|async|true(默认) or false|Boolean|默认情况下所有请求均为异步请求，跨域请求和dataType:"jsonp"请求不支持同步操作，同步操作将锁住浏览器直到请求完成。从1.8版本开始async:false过时
+|cache|true or false|boolean|dataType为script、jsonp时默认为false，其他默认为true，false表示浏览器不缓存此页。
+|contents|一个以"{字符串/正则表达式}"配对的对象|PlainObject|根据给定的内容类型，解析请求的返回结果
+|contentType|'application/x-www-form-urlencoded; charset=UTF-8'|String or Boolean|告知服务器内容类型
+|content|<pre>$.ajax({</br>url: "test.html",</br>context: document.body</br>}).done(function() {</br>$(this).addClass("done");</br>});</pre>|Object|设置Ajax相关回调函数的上下文
+|converters|{"* text": window.String, "text html": true, "text json": jQuery.parseJSON, "text xml": jQuery.parseXML}|PlainObject|数据类型到数据类型转换器的映射对象
+|crossDomain|true or false|Boolean|false表示同域，true表示跨域。同域强制跨域请求JSONP设为true
+|beforeSend|function(jqXHR,PlainObject){}e.g.beforeSend: function(xhr, settings) {</br> var csrftoken = jQuery.cookie('csrftoken');</br>xhr.setRequestHeader("X-CSRFToken", csrftoken);</br>},|Function|请求发出前的回调函数可用来设置自定义的http头信息等
+|error|function(jqXHR,textStatus,errorThrown){}|Function|请求失败调用，1.5版本开始可以可以函数租场的数组一次调用
+|success|function(data,textStatus,jqXHR){}|Function|3个参数：从服务器返回的数据，并根据dataType参数进行处理后的数据或dataFilter回调函数
+|complete|function(jqXHR,string textStatus){}|Function|请求完成后回调函数成功失败都调用，第二个参数是请求响应的描述
+|global|true or false|Boolean|true:无论怎么样这个请求将触发全局AJAX事件处理程序
+|headers|{}默认|PlainObject|此设置会在beforeSend 函数调用之前被设置 ;因此，请求头中的设置值，会被beforeSend 函数内的设置覆盖
+|ifModified|false|Boolean|只有上次请求响应改变时，才允许请求成功。使用 HTTP 包 Last-Modified 头信息判断。默认值是false
+|isLocal||Boolean|
+|jsonp||String or Boolean|在一个JSONP请求中重写回调函数的名字。这个值用来替代在"callback=?"这种GET或POST请求中URL参数里的"callback"部分，比如{jsonp:'onJsonPLoad'}会导致将"onJsonPLoad=?"传给服务器.如果不信任你的Ajax请求的目标，出于安全原因考虑 设置jsonp 属性为false。
+|jsonpCallback||String or Function|
+|processData|true or false|Boolean|默认情况下，通过data选项传递进来的数据，如果是一个对象(技术上讲只要不是字符串)，都会处理转化成一个查询字符串，以配合默认内容类型 "application/x-www-form-urlencoded"。如果要发送 DOM 树信息或其它不希望转换的信息，请设置为 false
+|scriptCharset||String|仅当"script"传输使用时（例如，跨域的"jsonp"或 dataType选项为"script" 和 "GET"类型）
+|statusCode|{} e.g.$.ajax({</br>statusCode: {</br>404: function() {</br> alert("page not found");</br>}</br>}</br>});|PlainObject|一个 HTTP响应状态码 和 当请求响应相应的状态码时执行的函数 组成的对象
+|timeout|0|Number|设置请求超时时间（毫秒）。值为0表示没有超时。
+|traditional|true or false|Boolean|传统的方式来序列化数据
+|password||String|响应HTTP访问认证请求的密码
+|username||String|响应HTTP访问认证请求的用户名
+|xhr||Function|回调创建XMLHttpRequest对象
+|xhrField|$.ajax({</br>url: a_cross_domain_url,</br> xhrFields: {</br> withCredentials: true</br>}</br>});|PlainObject|一对“文件名-文件值”组成的映射，用于设定原生的 XHR对象。例如，如果需要的话，在进行跨域请求时，你可以用它来设置withCredentials为true。
+
+jQuery 1.6+按照FIFO队列可以分配多个回调
+|新方法|value|类型|说明
+|-|-|-|-
+|done|function(data, textStatus, jqXHR) {}|Function|代替success
+|fail|function(jqXHR, textStatus, errorThrown) {}|Function|代替error
+|always|function(data or jqXHR, textStatus, jqXHR or errorThrown) {}|Function|代替complete
 
 ### 发起ajax,浏览器各线程之间的情况
 <p align="center">
