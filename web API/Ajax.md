@@ -106,6 +106,11 @@ jQuery 1.6+按照FIFO队列可以分配多个回调
 |fail|function(jqXHR, textStatus, errorThrown) {}|Function|代替error
 |always|function(data or jqXHR, textStatus, jqXHR or errorThrown) {}|Function|代替complete
 
+### $.ajax()发起一次成功上传文件的触发事件调用顺序
+<p align="center">
+    <img src="../img/ajax_flow.png" alt="ajax">
+</p>
+
 ### 发起ajax,浏览器各线程之间的情况
 <p align="center">
     <img src="../img/ajax.png" alt="ajax">
