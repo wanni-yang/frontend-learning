@@ -115,3 +115,47 @@ jQuery 1.6+按照FIFO队列可以分配多个回调
 <p align="center">
     <img src="../img/ajax.png" alt="ajax">
 </p>
+
+### 举栗子
+
+1. 原生XHR上传文件
+<pre>
+  兼容IE低版本
+  function ajax(url,method,data){
+    var xhr = null;
+    if(window.XMLHttpRequest){
+      xhr = new XMLHttpRequest();
+    }else if(window.ActiveXObject){
+      try{
+         xhr = new ActiveXObject("Msxml2.XMLHTTP")
+      }catch(e){
+        try{
+          xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }catch(e){
+           alert('浏览器不支持ajax')
+        }
+      }
+     }
+     xhr.onerror = function(e){
+        console.log(e)
+     }
+     xhr.open(method,url);
+     try{
+      setTimeout(function(){
+        xhr.send(data);
+       });
+     }catch(e){
+        console.log(e);
+     }
+     return xhr;
+  }
+  上传文件并绑定事件
+  var xhr = ajax(url,method,data);
+  xhr.upload.onprogress = function(e){
+      console.log('upload progress:', e.loaded/e.total*100+'%')
+  }
+  xhr.upload.onload = function(){
+  }
+  xhr.upload= function(){
+  }
+</pre>
