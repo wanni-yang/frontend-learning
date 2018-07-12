@@ -100,6 +100,7 @@ The PlainObject type is a JavaScript object containing zero or more key-value pa
 |xhrField|$.ajax({</br>url: a_cross_domain_url,</br> xhrFields: {</br> withCredentials: true</br>}</br>});|PlainObject|一对“文件名-文件值”组成的映射，用于设定原生的 XHR对象。例如，如果需要的话，在进行跨域请求时，你可以用它来设置withCredentials为true。
 
 jQuery 1.6+按照FIFO队列可以分配多个回调
+
 |新方法|value|类型|说明
 |-|-|-|-
 |done|function(data, textStatus, jqXHR) {}|Function|代替success
@@ -116,6 +117,18 @@ jQuery 1.6+按照FIFO队列可以分配多个回调
     <img src="../img/ajax.png" alt="ajax">
 </p>
 
+### ajax嵌套
+
+### ajax缓存处理
+> js中的http缓存受制于浏览器的http缓存策略
+<pre>
+原生xhr
+xhr.setRequestHeader("If-Modified-Since","0")
+xhr.setRequestHeader("Cache-Control","no-cache")
+
+jQuery
+cache:true//表示开启缓存
+</pre>
 ### 举栗子
 
 1. 原生XHR上传文件
@@ -158,4 +171,30 @@ jQuery 1.6+按照FIFO队列可以分配多个回调
   }
   xhr.upload= function(){
   }
+  
+  jQuery ajax
+  $.ajax({
+    type: method,
+    url: url,
+    data: formData,
+    processData : false,
+    contentType : false ,//必须false才会自动加上正确的Content-Type
+    xhr: function(){
+      var xhr = $.ajaxSettings.xhr();//实际上就是return new window.XMLHttpRequest()对象
+      if(xhr.upload) {
+        xhr.upload.addEventListener("progress", function(e){
+          console.log("jq upload progress:", e.loaded/e.total* 100 + "%");
+        }, false);
+        xhr.upload.addEventListener("load", function(){
+          console.log("jq upload onload.");
+        });
+        xhr.addEventListener("load", function(){
+          console.log("jq onload.");
+        });
+        return xhr;
+      }
+    }
+  });
+
+  
 </pre>
