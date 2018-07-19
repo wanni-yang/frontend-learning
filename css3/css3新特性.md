@@ -24,3 +24,8 @@ vmax|相对长度|vh vw中大的那个
 
 绝对长度：cm mm in pc pt px
 
+### 背景
+属性名|值|说明
+background-clip|content-box or padding-box or border-box|规定背景的绘制区域
+background-origin|content-box or padding-box or border-box|用来规定background-position相对哪个位置来定位，如果背景图像的 background-attachment 属性为 "fixed"，则该属性没有效果
+background-size|length(第一个是width，只有一个值，第二个值为auto) or percentage(相对父元素) or cover or contain|cover把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。背景图像的某些部分也许无法显示在背景定位区域中。contain	把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
