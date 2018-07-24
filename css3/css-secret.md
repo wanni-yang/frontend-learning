@@ -15,6 +15,19 @@
   
   keyframes-selector 必需的。动画持续时间的百分比。合法值：0-100% from(和0%相同) to (和100%相同)
   
+  animation-property|值|说明
+  -|-|-
+  animation-name|keyframename or none|关键帧名称@keyframes定义
+  animation-duration|time|多长时间完成秒或者毫秒为单位
+  animation-timing-function||如何完成一个周期
+  animation-delay|time|启动之前的延迟
+  animation-iteration-count||播放次数
+  animation-direction|normal 正常播放<br>reverse反向播放<br>alternate奇数次正向偶数次反向<br>alternate-reverse奇数次反向偶数次正向<br>initial<br>inherit|是否轮流反向播放
+  animation-fill-mode||不播放时，启动之前或者完成之后的样式
+  animation-play-state|pause or running|控制动画状态运行或者暂停
+  initial||默认值
+  inherit||继承父元素
+  
   transform-function|说明
   -|-
   none|	定义不进行转换。
@@ -44,7 +57,7 @@
   -|-
   transition-property|none or all（全部属性） or property
   transition-duration|time以秒或者毫秒为单位
-  transition-timing-function|linear（相同速度cubic-bezier(0,0,1,1)） ease（开始慢-变快-结束慢cubic-bezier(0.25,0.1,0.25,1)） ease-in（慢开始cubic-bezier(0.42,0,1,1)） ease-out（慢结束cubic-bezier(0,0,0.58,1)） ease-in-out（开始慢-结束慢cubic-bezier(0.42,0,0.58,1)） cubic-bezier(n,n,n,n)n取[0,1]
+  transition-timing-function|linear（相同速度cubic-bezier(0,0,1,1)） </br>ease（开始慢-变快-结束慢cubic-bezier(0.25,0.1,0.25,1)）</br> ease-in（慢开始cubic-bezier(0.42,0,1,1)）</br> ease-out（慢结束cubic-bezier(0,0,0.58,1)） </br>ease-in-out（开始慢-结束慢cubic-bezier(0.42,0,0.58,1)）</br> cubic-bezier(n,n,n,n)n取[0,1]
   transition-delay|time
   
 2. 逐帧动画
