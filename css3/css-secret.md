@@ -11,6 +11,7 @@
   animation|name duration timing-function delay iteration-count direction fill-mode play-state;
   @keyframes|animationname {keyframes-selector {css-styles;}}
   transform|transfrom-functions
+  transition|property(css属性 eg width) duration(持续时间) timing-function(转速曲线) delay(效果开始的时间)
   
   keyframes-selector 必需的。动画持续时间的百分比。合法值：0-100% from(和0%相同) to (和100%相同)
   
@@ -38,6 +39,13 @@
   skewX(angle)|	定义沿着 X 轴的 2D 倾斜转换。
   skewY(angle)|	定义沿着 Y 轴的 2D 倾斜转换。
   perspective(n)|	为 3D 转换元素定义透视视图。
+  
+  transition-property|说明
+  -|-
+  transition-property|none or all（全部属性） or property
+  transition-duration|time以秒或者毫秒为单位
+  transition-timing-function|linear（相同速度cubic-bezier(0,0,1,1)） ease（开始慢-变快-结束慢cubic-bezier(0.25,0.1,0.25,1)） ease-in（慢开始cubic-bezier(0.42,0,1,1)） ease-out（慢结束cubic-bezier(0,0,0.58,1)） ease-in-out（开始慢-结束慢cubic-bezier(0.42,0,0.58,1)） cubic-bezier(n,n,n,n)n取[0,1]
+  transition-delay|time
   
 2. 逐帧动画
 3. 闪烁效果
