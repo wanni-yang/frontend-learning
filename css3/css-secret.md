@@ -7,7 +7,7 @@
   animation|name duration timing-function delay iteration-count direction fill-mode play-state;
   @keyframes|animationname {keyframes-selector {css-styles;}}
   transform|transfrom-functions
-  transform-origin|更改转换元素的位置 必须先使用tranform x-axis(left center right length %) y-axis(top center bottom length %) z-axis(length)默认值50%，50%，0
+  transform-origin|更改转换元素基点坐标的位置，元素本身 必须先使用tranform x-axis(left center right length %) y-axis(top center bottom length %) z-axis(length)默认值50%，50%，0
   transform-style|属性指定嵌套元素是怎样在三维空间中呈现 必须先使用transform flat or preserve-3d
   transition|property(css属性 eg width) duration(持续时间) timing-function(转速曲线) delay(效果开始的时间)
   
