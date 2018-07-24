@@ -19,7 +19,7 @@
   -|-|-
   animation-name|keyframename or none|关键帧名称@keyframes定义
   animation-duration|time|多长时间完成秒或者毫秒为单位
-  animation-timing-function|三次贝塞尔曲线cubic-bezier(x1,y1,x2,y2)|如何完成一个周期
+  animation-timing-function|同transition-timing-functione.g.三次贝塞尔曲线cubic-bezier(x1,y1,x2,y2) or steps()|如何完成一个周期作用于每两个关键帧之间，而不是整个动画
   animation-delay|time|启动之前的延迟
   animation-iteration-count|n or infinite无限次|播放次数
   animation-direction|normal 正常播放<br>reverse反向播放<br>alternate奇数次正向偶数次反向<br>alternate-reverse奇数次反向偶数次正向<br>initial<br>inherit|是否轮流反向播放
@@ -29,6 +29,8 @@
   inherit||继承父元素
   
  > [cubic-bezier((x1,y1,x2,y2)](http://cubic-bezier.com)分别代表两个控制锚点的坐标值,我们通过这两个控制锚点来指定想要的贝塞尔曲线. 语法形式是这样的:cubic-bezier(x1, y1, x2, y2),其中 (x1, y1) 表示第一个控制锚点的坐标,而 (x2, y2) 是第二个。曲线片断的两个端点分别固定在(0,0) 和 (1,1),前者是整个过渡的起点（时间进度为零,动画进度为零）,后者是终点（时间进度为 100%,动画进度为 100%）。把控制锚点的水平坐标和垂直坐标互换， 就可以得到任何调速函数的反向版本
+ 
+ > steps 函数指定了一个阶跃函数第一个参数指定了时间函数中的间隔数量（必须是正整数）第二个参数可选，接受 start 和 end 两个值，指定在每个间隔的起点或是终点发生阶跃变化，默认为 end。step-start等同于steps(1,start)，动画分成1步，动画执行时为开始左侧端点的部分为开始；step-end等同于steps(1,end)：动画分成一步，动画执行时以结尾端点为开始，默认值为end。2个参数都会选择性的跳过前后部分，start跳过0%，end跳过100%step-start在变化过程中，都是以下一帧的显示效果来填充间隔动画，所以0% 到 50%,step-end与上面相反，都是以上一帧的显示效果来填充间隔动画，所以0% 到 50%
  
  > backwards:当 animation-direction 为 "normal" 或 "alternate" 时是 from 关键帧中的值,当 animation-direction 为 "reverse" 或 "alternate-reverse" 时是to关键帧中的值
   
