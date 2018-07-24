@@ -10,7 +10,10 @@
   transform-origin|更改转换元素的位置 必须先使用tranform x-axis(left center right length %) y-axis(top center bottom length %) z-axis(length)
   transform-style|属性指定嵌套元素是怎样在三维空间中呈现 必须先使用transform flat or preserve-3d
   transition|property(css属性 eg width) duration(持续时间) timing-function(转速曲线) delay(效果开始的时间)
-  keyframes-selector 必需的。动画持续时间的百分比。合法值：0-100% from(和0%相同) to (和100%相同)
+  
+  > keyframes-selector 必需的。动画持续时间的百分比。合法值：0-100% from(和0%相同) to (和100%相同)
+  
+  > 用transition进行过渡时注意指定过渡属性，因其过渡默认属性值为all不指定的话所有可以过渡的属性都会出现过渡效果。另外，可以通过transition-delay（transition简写中是第二个时间值）属性把各个属性的过渡过程排成队列。e.g.:先过渡高度再过渡宽度，transition:.5s height,.8s .5s(delay=before duration) width
   
   animation-property|值|说明
   -|-|-
