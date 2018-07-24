@@ -1,11 +1,7 @@
 ### 过渡与动画
-1. 缓动效果
-  - 位移变化 模拟小球下落回弹的过程
-  - 尺寸变化 鼠标悬停变大、弹框缓慢弹出、图形元素动态变化
-  - 角度变化 饼图扇区从0度开始展开到实际大小
-  
-  <b>animation&@keyframes css rule</b>  
-  
+
+ <b>animation&@keyframes&transform&transition css rule</b>  
+ 
   属性名|语法
   -|-
   animation|name duration timing-function delay iteration-count direction fill-mode play-state;
@@ -62,8 +58,12 @@
   transition-timing-function|linear（相同速度cubic-bezier(0,0,1,1)） </br>ease（开始慢-变快-结束慢cubic-bezier(0.25,0.1,0.25,1)）</br> ease-in（慢开始cubic-bezier(0.42,0,1,1)）</br> ease-out（慢结束cubic-bezier(0,0,0.58,1)） </br>ease-in-out（开始慢-结束慢cubic-bezier(0.42,0,0.58,1)）</br> cubic-bezier(n,n,n,n)n取[0,1]
   transition-delay|time
   
-2. 逐帧动画
-3. 闪烁效果
-4. 打字动画
-5. 状态平滑的动画
-6. 沿环形路径平移的动画
+#### 1. 缓动效果
+  - 位移变化 模拟小球下落回弹的过程
+  - 尺寸变化 鼠标悬停变大、弹框缓慢弹出、图形元素动态变化
+  - 角度变化 饼图扇区从0度开始展开到实际大小
+#### 2. 逐帧动画
+#### 3. 闪烁效果
+#### 4. 打字动画
+#### 5. 状态平滑的动画
+#### 6. 沿环形路径平移的动画
