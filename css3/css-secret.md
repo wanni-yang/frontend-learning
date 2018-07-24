@@ -52,7 +52,7 @@
   scaleX(x)|	通过设置 X 轴的值来定义缩放转换。
   scaleY(y)|	通过设置 Y 轴的值来定义缩放转换。
   scaleZ(z)|	通过设置 Z 轴的值来定义 3D 缩放转换。
-  rotate(angle)|	定义 2D 旋转，在参数中规定角度。
+  rotate(angle)|	定义 2D 旋转，在参数中规定角度 0-360deg 0-1turn
   rotate3d(x,y,z,angle)|	定义 3D 旋转。
   rotateX(angle)|	定义沿着 X 轴的 3D 旋转。
   rotateY(angle)|	定义沿着 Y 轴的 3D 旋转。
