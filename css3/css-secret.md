@@ -14,7 +14,7 @@
   
   keyframes-selector 必需的。动画持续时间的百分比。合法值：0-100% from(和0%相同) to (和100%相同)
   
-  transfrom值|说明
+  transform-function|说明
   -|-
   none|	定义不进行转换。
   matrix(n,n,n,n,n,n) |	定义 2D 转换，使用六个值的矩阵。
