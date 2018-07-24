@@ -19,14 +19,16 @@
   -|-|-
   animation-name|keyframename or none|关键帧名称@keyframes定义
   animation-duration|time|多长时间完成秒或者毫秒为单位
-  animation-timing-function||如何完成一个周期
+  animation-timing-function|三次贝塞尔曲线cubic-bezier(n,n,n,n)|如何完成一个周期
   animation-delay|time|启动之前的延迟
-  animation-iteration-count||播放次数
+  animation-iteration-count|n or infinite无限次|播放次数
   animation-direction|normal 正常播放<br>reverse反向播放<br>alternate奇数次正向偶数次反向<br>alternate-reverse奇数次反向偶数次正向<br>initial<br>inherit|是否轮流反向播放
-  animation-fill-mode||不播放时，启动之前或者完成之后的样式
+  animation-fill-mode|none 动画播放之前之后都不会应用任何样式到目标元素</br>forwards 动画结束后应用该属性值</br>backwards动画将应用在 animation-delay 定义期间启动动画的第一次迭代的关键帧中定义的属性值</br>both|不播放时，启动之前或者完成之后的样式
   animation-play-state|pause or running|控制动画状态运行或者暂停
   initial||默认值
   inherit||继承父元素
+  
+  backwards:当 animation-direction 为 "normal" 或 "alternate" 时是 from 关键帧中的值,当 animation-direction 为 "reverse" 或 "alternate-reverse" 时是to关键帧中的值
   
   transform-function|说明
   -|-
