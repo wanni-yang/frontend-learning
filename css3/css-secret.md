@@ -19,7 +19,7 @@
   animation-delay|time|启动之前的延迟
   animation-iteration-count|n or infinite无限次|播放次数
   animation-direction|normal 正常播放<br>reverse反向播放<br>alternate奇数次正向偶数次反向<br>alternate-reverse奇数次反向偶数次正向<br>initial<br>inherit|是否轮流反向播放
-  animation-fill-mode|none 动画播放之前之后都不会应用任何样式到目标元素</br>forwards 动画结束后应用该属性值</br>backwards动画将应用在 animation-delay 定义期间启动动画的第一次迭代的关键帧中定义的属性值</br>both|不播放时，启动之前或者完成之后的样式
+  animation-fill-mode|none 动画播放之前之后都不会应用任何样式到目标元素</br>forwards 动画结束后应用该属性值</br>backwards动画将应用在 animation-delay 定义期间启动动画的第一次</br>迭代的关键帧中定义的属性值</br>both|不播放时，启动之前或者完成之后的样式
   animation-play-state|pause or running|控制动画状态运行或者暂停
   initial||默认值
   inherit||继承父元素
