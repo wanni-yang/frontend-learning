@@ -32,10 +32,12 @@
    - 根元素或者包含它的元素
    - 浮动元素`float 不为 none`的元素
    - 绝对定位元素`position:absolute/fixed`
-   - 非块级box容器`display:table-cell，table-caption，inline-block, flex, inline-flex,grid,inline-grid`
-   - 表格单元格
+   - 行内块`inline-block,grid,inline-grid`
+   - 表格单元格`display:table-cell，table-caption，`
    - `overflow不是visible`
    - flex boxes `display:flex;inline-flex`
+   
+   > 但其中，最常见的就是overflow:hidden、float:left/right、position:absolute。也就是说，每次看到这些属性的时候，就代表了该元素以及创建了一个BFC了
    
    overflow属性规定当内容溢出元素框时发生的事情
    
@@ -50,7 +52,7 @@
  ##### BFC特性
  - 同一个BFC中元素以正常流排列
  - 同一个BFC中的元素相互影响可能发生margin collapse
- - 同一个BFC中每个盒子的margin-left的左边与容器块border-left的左边相接触（从左到右）浮动存在也如此
+ - 同一个BFC中每个盒子的margin-left的左边与容器块border-left的左边相接触（从左到右）浮动存在也如此(常规流里面浮动元素和一般块级元素之间，浮动脱离常规流，后面的元素就会从包含块的最左边开始，这时就会发生重叠，给一般的块级元素也创建一个BFC就会避免被浮动元素重叠)
  - BFC区域不会和float box叠加
  - BFC在页面上是独立的容器，处于BFC内部的元素与外部的元素相互隔离， 使内外元素的定位不会相互影响
  - 计算BFC高度时，考虑其包含的全部元素包括浮动元素
