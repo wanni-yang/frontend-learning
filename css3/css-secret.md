@@ -1,6 +1,6 @@
-### 过渡与动画
+### 过渡&动画&变形
 
- <b>animation&@keyframes&transform&transition css rule</b>  
+ <b>animation&transform&transition css rule</b>  
  
   属性名|语法
   -|-
@@ -69,22 +69,35 @@
   transition-duration|time以秒或者毫秒为单位
   transition-timing-function|linear（相同速度cubic-bezier(0,0,1,1)） </br>ease（开始慢-变快-结束慢cubic-bezier(0.25,0.1,0.25,1)）</br> ease-in（慢开始cubic-bezier(0.42,0,1,1)）</br> ease-out（慢结束cubic-bezier(0,0,0.58,1)） </br>ease-in-out（开始慢-结束慢cubic-bezier(0.42,0,0.58,1)）</br> cubic-bezier(n,n,n,n)n取[0,1]
   transition-delay|time
-  
-#### 1. 缓动效果
+#### animation example
+##### 1. 缓动效果（&transition）
   - 位移变化 模拟小球下落回弹的过程
   - 尺寸变化 鼠标悬停变大、弹框缓慢弹出、图形元素动态变化[demo](http://jsrun.net/9egKp/edit)
   - 角度变化 饼图扇区从0度开始展开到实际大小
-#### 2. 逐帧动画
-#### 3. 闪烁效果
+##### 2. 逐帧动画
+##### 3. 闪烁效果
   - 页面需要通过闪烁提示用户[demo](http://jsrun.net/negKp/edit)
 <p align="center">
     <img src="../img/blink.png" alt="animation">
 </p>
 
-#### 4. 打字动画[demo](http://jsrun.net/RegKp/edit)
+##### 4. 打字动画[demo](http://jsrun.net/RegKp/edit)
  > 模拟打字效果，文字逐个显示。思路动画主体为容器宽度，文字包裹在容器中，让其宽度从0开始以steps的方式一个一个变为本身的宽度,光标的闪烁和文字的动画分开
-#### 5. 状态平滑的动画[demo](http://jsrun.net/MegKp/edit)
+##### 5. 状态平滑的动画[demo](http://jsrun.net/MegKp/edit)
 动画的触发条件不确定循环次数无法控制，当动画停止时停留在当前状态或者平滑的过渡到开始状态
-#### 6. 沿环形路径平移的动画
+##### 6. 沿环形路径平移的动画（&transform）
  
  涉及到点 平行四边形，菱形图片 闪烁 动画 变形
+
+#### transform example
+##### 1. 平行四边形
+##### 2. 菱形图片（&transition）
+##### 3. 切角效果（&transition）
+##### 4. 梯形标签页
+##### 5. 饼图
+##### 6. 折角效果
+##### 7. 交互式图片对比控件
+##### 8. 垂直居中
+#### transition example
+##### 1. 染色效果
+##### 2. 模糊弱化背景
