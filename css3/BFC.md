@@ -22,7 +22,7 @@
    - box从常规流中移除，不影响常规流布局
    - `position:absolute;fixed`
    - `absolute`相对于最近的一个属性`absolute/relative/fixed`的父元素，不存在的话就是body
- - 创建BFC
+ #### 创建BFC
    - 根元素或者包含它的元素
    - `float 不为 none`的元素
    - `position:absolute/fixed`
