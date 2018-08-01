@@ -95,7 +95,11 @@
 ##### 2. 菱形图片（&transition）
 > polygon()函数用于定义一个多边形。它的参数是一组坐标对（<shape-arg> <shape-arg>），每一个坐标对代表多边形的一个顶点坐标。浏览器会将最后一个顶点和第一个顶点连接得到一个封闭的多边形。坐标对使用逗号来进行分隔，可以使用绝对单位或百分比单位值.除了坐标对参数，polygon()函数还可以使用一个可选的关键字fill-rule。该关键字指定如何处理可能相交的多边形形状的区域。可取值有nonzero 和evenodd。默认值为nonzero
 - 涉及到点对img应用clip-path:polygon();用transition：1s clip-path进行缓动处理
-##### 3. 切角效果（&transition）
+##### 3. 切角效果（&transition）[demo](http://jsrun.net/TsgKp/edit)
+<p align="center">
+    <img src="../img/corner.png" alt="animation">
+</p>
+思路：四块单切角矩形(1/4大小)组成，从切角深度处开始透明线性渐变，背景色从0（小于切角深度即可）开始线性渐变
 ##### 4. 梯形标签页
 ##### 5. 饼图
 ##### 6. 折角效果
