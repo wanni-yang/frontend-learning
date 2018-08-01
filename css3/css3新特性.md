@@ -9,6 +9,9 @@ radial-gradient|shape(ellipse,circle),size(渐变的大小) position(center top 
 repeating-linear-gradient|direction(渐变角度，left right top bottom 180deg) color-stop1,color-stop2...(渐变起止颜色，停止位置可用百分比)|重复线性渐变创建图像
 repeat-radial-gradient||重复径向渐变创建图像
 translate|x,y|从当前位置移动元素
+polygon|多边形各个点的坐标（x1 y1,x2,y2...）|绘制多边形
+cubic-bezier|x1,x2,y1,y2|滑动曲线
+step|步数，整数|阶跃函数
 ### 单位
 长度单位|类型|说明
 -|-|-
