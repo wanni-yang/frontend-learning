@@ -1,3 +1,14 @@
+### ECMAScript2018
+对象|说明
+-|-
+Object Function Boolean Symbol Error|fundamental to the runtime semantics of the language
+Math Number Date|represent and manipulate numeric values
+String RegExp|text processing
+Array|indexed collections of values
+Map Set| keyed collections
+JSON ArrayBuffer SharedArrayBuffer DataView|support structured data
+Promise|support control abstractions generator function
+Proxy Reflect|reflection
 ### 全局属性
 
 - Infinity
