@@ -153,7 +153,8 @@ function resolvePromise(promise2, x, resolve, reject) {
         resolve(x);
     }
 }
-```Promise.resolve = function(val) {
+```
+Promise.resolve = function(val) {
     return new Promise((resolve, reject) => {
         resolve(val);
     });
@@ -187,5 +188,6 @@ Promise.all = function(promises) {
             }, reject);
         }
     });
-}```
+}
+```
 </code>
