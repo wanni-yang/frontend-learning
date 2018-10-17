@@ -1,6 +1,6 @@
 <code>
 class Promise {
-
+    
     //由于new Promise((resolve, reject)=>{})，所以传入一个参数函数executor传入就执行。
     //executor里面有两个参数，一个叫resolve决议，一个叫reject拒绝。
     constructor(executor) {
@@ -111,11 +111,9 @@ class Promise {
         return this.then(null, fn);
     }
 }
-
-//规定onFulfilled()或onRejected()的值，即第一个then返回的值，叫做x，判断x的函数叫做resolvePromise
-
 function resolvePromise(promise2, x, resolve, reject) {
 
+    //规定onFulfilled()或onRejected()的值，即第一个then返回的值，叫做x，判断x的函数叫做resolvePromise
     //若第一个then返回值和then默认返回的promise2一样会引起循环引用报错
     if (x === promise2) {
         return reject(new TypeError('Chaining cycle detected for promise'));
@@ -154,8 +152,8 @@ function resolvePromise(promise2, x, resolve, reject) {
     } else {
         resolve(x);
     }
-};
-Promise.resolve = function(val) {
+}
+```Promise.resolve = function(val) {
     return new Promise((resolve, reject) => {
         resolve(val);
     });
@@ -189,5 +187,5 @@ Promise.all = function(promises) {
             }, reject);
         }
     });
-}
+}```
 </code>
